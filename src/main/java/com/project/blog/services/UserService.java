@@ -2,6 +2,7 @@ package com.project.blog.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 
 import com.project.blog.entities.User;
 import com.project.blog.payloads.UserDto;
