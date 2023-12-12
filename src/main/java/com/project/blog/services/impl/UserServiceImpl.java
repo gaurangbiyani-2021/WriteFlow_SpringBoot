@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.project.blog.payloads.UserDto;
 import com.project.blog.repositories.UserRepo;
@@ -11,7 +12,7 @@ import com.project.blog.services.UserService;
 
 import com.project.blog.entities.User;
 
-
+@Service
 public class UserServiceImpl implements UserService {
 
 	@Autowired
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService {
 	public UserDto updateUser(UserDto userDto, Integer userId) {
 		// TODO Auto-generated method stub
 		User user  = this.userRepo.findById(userId).orElseThrow(IllegalArgumentException::new);;
-		
+		 
 		user.setName(userDto.getName());
 		user.setEmail(userDto.getEmail());
 		user.setPassword(userDto.getPassword());
