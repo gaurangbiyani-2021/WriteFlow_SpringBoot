@@ -1,5 +1,10 @@
 package com.project.blog.repositories;
 
-public class CategoryRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.project.blog.entities.Category;
+import com.project.blog.entities.User;
+
+public interface CategoryRepo extends JpaRepository<Category,Integer>{
+	
 }
