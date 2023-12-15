@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 		User user = this.userRepo.findById(userId).orElseThrow(IllegalArgumentException::new);;
 		return this.userToDto(user);
 	}
-
+	// get all user api - 
 	@Override	
 	public List<UserDto> getAllUsers() {
 		// TODO Auto-generated method stub
@@ -64,6 +64,7 @@ public class UserServiceImpl implements UserService {
 		return userDtos;
 	}
 
+	// delete user api -
 	@Override
 	public void deleteUser(Integer userId) {
 		// TODO Auto-generated method stub
