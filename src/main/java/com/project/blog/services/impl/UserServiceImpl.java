@@ -21,7 +21,8 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private ModelMapper modelMapper;
-	
+
+	// create user - 
 	@Override
 	public UserDto createUser(UserDto userDto) {
 		// TODO Auto-generated method stub
@@ -30,6 +31,7 @@ public class UserServiceImpl implements UserService {
 		return this.userToDto(savedUser);
 	}
 
+	// update user - 
 	@Override
 	public UserDto updateUser(UserDto userDto, Integer userId) {
 		// TODO Auto-generated method stub
@@ -46,6 +48,7 @@ public class UserServiceImpl implements UserService {
 		return userDto1;
 	}
 
+	// get user by  id ap i- 
 	@Override
 	public UserDto getUserById(Integer userId) {
 		// TODO Auto-generated method stub
