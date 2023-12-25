@@ -31,7 +31,14 @@ public class CategoryServiceImpl implements CateoryService {
 	@Override
 	public CategoryDto updateCategory(CategoryDto categoryDto, Integer categoryId) {
 		// TODO Auto-generated method stub
-		return null;
+		Category cat = this.categoryRepo.findById(categoryId)
+				.orElseThrow(IllegalArgumentException::new);
+		
+		cat.setCategoryTitle(categoryDto.getCategoryTitle());
+		cat.setCategoryDescription(categoryDto.getCategoryDescription());
+		
+		Category updatedcat =  this.categoryRepo.save(cat);
+		return this.modelMapper.map(updatedcat, CategoryDto.class);
 	}
 
 	@Override
