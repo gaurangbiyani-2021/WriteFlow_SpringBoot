@@ -48,12 +48,12 @@ public class UserController {
 		this.userService.deleteUser(uid);
 		return new ResponseEntity(Map.of("message","User deleted successfully"),HttpStatus.OK);
 	}
-	
+	// get all user api - 
 	@GetMapping("/")
 	public ResponseEntity<List<UserDto>> getAllUsers(){
 		return ResponseEntity.ok(this.userService.getAllUsers());
 	}
-	
+	// get user by id api - 
 	@GetMapping("/{userId}")
 	public ResponseEntity<UserDto> getSingleUser(@PathVariable Integer userId){
 		return ResponseEntity.ok(this.userService.getUserById(userId));
