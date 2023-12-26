@@ -33,7 +33,7 @@ public class PostServiceImpl implements PostService {
 	
 	
 	@Override
-	public Post createPost(PostDto postDto , Integer userId, Integer categoryId) {
+	public PostDto createPost(PostDto postDto , Integer userId, Integer categoryId) {
 		// TODO Auto-generated method stub
 		
 		User user = this.userRepo.findById(userId).orElseThrow(IllegalArgumentException::new);
@@ -46,7 +46,7 @@ public class PostServiceImpl implements PostService {
 		
 		Post newPost = this.postRepo.save(post);
 		
-		return this.modelMapper.map(newPost, Post.class);
+		return this.modelMapper.map(newPost, PostDto.class);
 	}
 
 	@Override
