@@ -23,6 +23,7 @@ public class PostServiceImpl implements PostService {
 	@Autowired
 	private PostRepo postRepo;
 	
+	//model mapper
 	@Autowired
 	private ModelMapper modelMapper;
 	
