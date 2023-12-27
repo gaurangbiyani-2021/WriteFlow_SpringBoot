@@ -32,7 +32,7 @@ public class PostServiceImpl implements PostService {
 	@Autowired
 	private CategoryRepo categoryRepo;
 	
-	
+	// create post 
 	@Override
 	public PostDto createPost(PostDto postDto , Integer userId, Integer categoryId) {
 		// TODO Auto-generated method stub
@@ -49,31 +49,37 @@ public class PostServiceImpl implements PostService {
 		
 		return this.modelMapper.map(newPost, PostDto.class);
 	}
-
+	
+	//update post 
 	@Override
 	public Post updatePost(PostDto postDto, Integer postId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	//delete post 
+	
 	@Override
 	public void deletePost(Integer postId) {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	//get all post 
 	@Override
 	public List<Post> getAllPost() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	//post by id 
 	@Override
 	public Post getPostById(Integer postId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	//post by category
 	@Override
 	public List<PostDto> getPostsByCategory(Integer categoryId) {
 		// TODO Auto-generated method stub
@@ -84,6 +90,7 @@ public class PostServiceImpl implements PostService {
 		return postDtos;
 	}
 
+	//post by user  
 	@Override
 	public List<PostDto> getPostsByUser(Integer userId) {
 		// TODO Auto-generated method stub
@@ -96,6 +103,7 @@ public class PostServiceImpl implements PostService {
 	
 	}
 
+	//search posts
 	@Override
 	public List<Post> searchPosts(String keyword) {
 		// TODO Auto-generated method stub
