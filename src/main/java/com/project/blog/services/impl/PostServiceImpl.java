@@ -53,9 +53,15 @@ public class PostServiceImpl implements PostService {
 
 	// update post
 	@Override
-	public Post updatePost(PostDto postDto, Integer postId) {
+	public PostDto updatePost(PostDto postDto, Integer postId) {
 		// TODO Auto-generated method stub
-		return null;
+		Post post = this.postRepo.findById(postId).orElseThrow(IllegalArgumentException::new);
+		post.setTitle(postDto.getTitle());
+		post.setContent(postDto.getContent());
+		post.setImageName(postDto.getImageName());
+		Post updatedPost = this.postRepo.save(post);
+		
+		return this.modelMapper.map(updatedPost, PostDto.class);
 	}
 
 	// delete post
@@ -63,6 +69,10 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public void deletePost(Integer postId) {
 		// TODO Auto-generated method stub
+		
+		Post post = this.postRepo.findById(postId).orElseThrow(IllegalArgumentException::new);
+		
+		this.postRepo.delete(post);
 
 	}
 
