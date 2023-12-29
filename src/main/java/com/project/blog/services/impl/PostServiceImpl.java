@@ -82,7 +82,7 @@ public class PostServiceImpl implements PostService {
 
 	// get all post
 	@Override
-	public PostResponse getAllPost(Integer pageNumber, Integer pageSize) {
+	public PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy) {
 		// TODO Auto-generated method stub
 		PageRequest p = PageRequest.of(pageNumber, pageSize);
 		Page<Post> pagePost = this.postRepo.findAll(p);
