@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.project.blog.entities.Category;
@@ -84,7 +85,7 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy) {
 		// TODO Auto-generated method stub
-		PageRequest p = PageRequest.of(pageNumber, pageSize);
+		PageRequest p = PageRequest.of(pageNumber, pageSize, Sort.by(sortBy));
 		Page<Post> pagePost = this.postRepo.findAll(p);
 		List<Post> allPosts = pagePost.getContent();
 		List<PostDto> postDtos = allPosts.stream().map((post) -> this.modelMapper.map(post, PostDto.class))
@@ -142,6 +143,7 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public List<Post> searchPosts(String keyword) {
 		// TODO Auto-generated method stub
+		List<Post> posts = this.postRepo.findByTitleContaining(keyword);
 		return null;
 	}
 
