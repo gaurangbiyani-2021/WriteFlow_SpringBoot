@@ -109,7 +109,7 @@ public class PostController {
 		return new ResponseEntity<List<PostDto>>(result,HttpStatus.OK);
 	}
 
-	// post image upload -
+	// post image upload-
 
 	@PostMapping("/post/image/upload/{postId}")
 	public ResponseEntity<PostDto> uploadPostImage(
