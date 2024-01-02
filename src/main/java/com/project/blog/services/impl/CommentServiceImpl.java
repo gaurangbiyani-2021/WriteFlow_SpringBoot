@@ -2,6 +2,7 @@ package com.project.blog.services.impl;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.project.blog.entities.Comment;
 import com.project.blog.entities.Post;
@@ -10,6 +11,7 @@ import com.project.blog.repositories.CommentRepo;
 import com.project.blog.repositories.PostRepo;
 import com.project.blog.services.CommentService;
 
+@Service
 public class CommentServiceImpl implements CommentService {
 
 	@Autowired
